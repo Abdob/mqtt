@@ -8,7 +8,7 @@ import time
 import os
 
 # get the brokers address/name
-MQTT_BROKER = 'mqtt'
+MQTT_BROKER = '52.53.158.60'
 # Topic
 MQTT_SEND = "streaming"
 # OpenCV time.  This is on device0
@@ -17,6 +17,7 @@ cap = cv.VideoCapture(0)
 client = mqtt.Client()
 face_cascade = cv.CascadeClassifier('haarcascade_frontalface_default.xml')
 # Connect
+print(MQTT_BROKER)
 client.connect(MQTT_BROKER)
 try:
  while True:
