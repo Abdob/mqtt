@@ -1,11 +1,10 @@
 import base64
-import cv2 as cv
 import numpy as np
 import paho.mqtt.client as mqtt
 import os
 from datetime import datetime
 
-MQTT_BROKER = os.getenv('MQTT')
+MQTT_BROKER = 'mqtt'
 MQTT_RECEIVE = "streaming"
 
 frame = np.zeros((240, 320, 3), np.uint8)
