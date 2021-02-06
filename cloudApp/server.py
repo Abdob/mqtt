@@ -23,7 +23,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     global frame
     # Decoding the message
-    save_string = 'face_' + str(datetime.now()) + '.bin'
+    save_string = '/apps/data/face_' + str(datetime.now()) + '.bin'
     print("Storing face ..")
     f = open(save_string, 'w+b')
     f.write(msg.payload)

@@ -4,6 +4,7 @@ RUN apt-get update
 RUN apt install -y python3-dev python3-pip vim-tiny
 RUN pip3 install numpy paho-mqtt
 WORKDIR /apps
+RUN mkdir data
 COPY server.py server.py
 #CMD python3 /apps/server.py
 
