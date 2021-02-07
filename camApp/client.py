@@ -8,7 +8,7 @@ import time
 import os
 
 # get the brokers address/name
-MQTT_BROKER = '52.53.158.60'
+MQTT_BROKER = '54.153.93.176'
 # Topic
 MQTT_SEND = "streaming"
 # OpenCV time.  This is on device0
