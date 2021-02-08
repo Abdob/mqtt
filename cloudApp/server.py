@@ -1,6 +1,7 @@
 import base64
 import numpy as np
 import paho.mqtt.client as mqtt
+import cv2 as cv
 import os
 from datetime import datetime
 
@@ -23,11 +24,13 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     global frame
     # Decoding the message
-    save_string = '/apps/data/face_' + str(datetime.now()) + '.bin'
-    print("Storing face ..")
-    f = open(save_string, 'w+b')
-    f.write(msg.payload)
-    f.close()
+    arr = np.frombuffer(msg.payload,dtype='uint8')
+    print(arr.shape)
+    img = cv.imdecode(arr,1)
+    print(img.shape)
+    save_string = '/apps/data/face_' + str(datetime.now()) + '.png'
+    print("Storing png face ..")
+    cv.imwrite(save_string, img)
     # converting into numpy array from buffer
 
 

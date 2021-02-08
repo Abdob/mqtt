@@ -2,6 +2,7 @@ FROM ubuntu
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt install -y python3-dev python3-pip vim-tiny
+Run apt install -y python3-opencv
 RUN pip3 install numpy paho-mqtt
 WORKDIR /apps
 RUN mkdir data
